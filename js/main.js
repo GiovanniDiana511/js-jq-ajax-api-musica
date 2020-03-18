@@ -5,8 +5,16 @@ $(document).ready(function(){
 
     $("#sel").change(function () {
         var genereSelezionato = $(this).val();
-        if (genereSelezionato == ) {
-
+        if (genereSelezionato == "") {
+            $(".card").show();
+        } else {
+            $(".card").each(function(){
+                if (genereSelezionato.toLowerCase() == $(this).data("genere").toLowerCase()) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
         }
     });
 
